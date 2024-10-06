@@ -1,4 +1,67 @@
-# Mems-Based-Hand-Gesture-using-Robot
+MEMS-Based Hand Gesture Controlled Robot (IoT Project)
+This project demonstrates the use of MEMS (Micro-Electro-Mechanical Systems) technology to control a robot using hand gestures. The robot moves in response to the tilt of your hand, detected using an ADXL345 accelerometer. The project incorporates an ESP8266 Wi-Fi module, allowing it to be controlled wirelessly. The motors are controlled by an L298N motor driver.
+
+Features
+Hand gesture-controlled robot using a MEMS accelerometer (ADXL345).
+Wireless communication using ESP8266.
+Ability to move forward, backward, left, right, or stop based on hand gestures.
+Real-time gesture detection and motor control.
+
+Components
+ESP8266: Wi-Fi module for IoT integration.
+ADXL345: 3-axis MEMS accelerometer for gesture recognition.
+L298N: Motor driver to control the robot's motors.
+Motors: Two DC motors for movement.
+Power Supply: For powering the ESP8266, ADXL345, and motors.
+Wires and Breadboard: For connections.
+
+Hardware Setup
+ADXL345 Sensor: Connect to the ESP8266 using I2C (SDA and SCL lines).
+L298N Motor Driver: Connect to the ESP8266 to control the motors.
+
+ESP8266 Pins:
+D3 → Motor 1 (Forward)
+D4 → Motor 1 (Backward)
+D5 → Motor 2 (Forward)
+D6 → Motor 2 (Backward)
+Power Supply: Ensure a stable power source for the motors and ESP8266.
+
+Software Setup
+Install the following libraries in the Arduino IDE:
+Adafruit Unified Sensor: For interfacing with the ADXL345.
+Adafruit ADXL345 Library: For reading acceleration data from the sensor.
+Program the ESP8266 with the code provided.
+
+How It Works
+The ADXL345 accelerometer measures the hand's tilt in three axes: X, Y, and Z.
+The ESP8266 reads the sensor data and interprets hand gestures.
+Tilting forward: Robot moves forward.
+Tilting backward: Robot moves backward.
+Tilting left or right: Robot turns left or right.
+No tilt: Robot stops.
+
+Circuit Diagram
+Add a simple schematic illustrating connections between:
+
+ESP8266
+ADXL345
+L298N Motor Driver
+Motors
+Installation
+Clone this repository or download the code.
+Open the code in the Arduino IDE.
+Connect your ESP8266, upload the code, and power on the setup.
+Usage
+Power on the robot.
+Use hand gestures to control the robot:
+Forward Gesture: Tilt your hand forward.
+Backward Gesture: Tilt your hand backward.
+Left Gesture: Tilt your hand left.
+Right Gesture: Tilt your hand right.
+Stop Gesture: Keep your hand flat.
+
+Code
+The following is the main code controlling the robot's movement based on the hand gesture:
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
@@ -72,3 +135,6 @@ void stop1() {
   digitalWrite(m2, LOW);
   digitalWrite(m22, LOW);
 }
+
+License
+This project is open-source and free to use under the MIT License.
