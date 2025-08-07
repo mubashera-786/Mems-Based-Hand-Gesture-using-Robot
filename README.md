@@ -60,6 +60,8 @@ Left Gesture: Tilt your hand left.
 Right Gesture: Tilt your hand right.
 Stop Gesture: Keep your hand flat.
 
+
+
 Code
 The following is the main code controlling the robot's movement based on the hand gesture:
 #include <Wire.h>
